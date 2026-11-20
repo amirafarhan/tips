@@ -4,6 +4,8 @@ A data-visualization project with **Matplotlib** and **Seaborn**, using the clas
 bills recorded by one waiter: total bill, tip, sex, smoker, day, time and party size). It also includes an interactive
 **Streamlit** dashboard that answers the notebook's questions with statistical tests.
 
+**🔗 Live demo:** https://zvi3tnadcuvppjmdfaebwm.streamlit.app/
+
 ## 🚀 Features
 
 - **Notebook (`tips.ipynb`):**
@@ -54,7 +56,9 @@ pip install -r requirements.txt
 
 ## ▶️ Run
 
-Streamlit dashboard (opens http://localhost:8501):
+Live demo: https://zvi3tnadcuvppjmdfaebwm.streamlit.app/
+
+Run the Streamlit dashboard locally (opens http://localhost:8501):
 
 ```bash
 streamlit run app.py
