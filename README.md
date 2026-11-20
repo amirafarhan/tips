@@ -1,80 +1,71 @@
-🧠 AI-Powered Tips Recommendation System
-<p align="center"> <img src="a_dark_themed_computer_screen_jupyter_notebook_scr.png" alt="Project Preview" width="800"/> </p> <p align="center"> <img src="https://img.shields.io/badge/Python-3.10-blue?logo=python"/> <img src="https://img.shields.io/badge/Status-Active-success"/> <img src="https://img.shields.io/badge/AI-Ready-purple"/> <img src="https://img.shields.io/badge/Data%20Science-Project-orange"/> <img src="https://img.shields.io/badge/License-MIT-green"/> </p>
-🚀 Overview
+# 💵 Restaurant Tips — Data Visualization & Analysis
 
-An AI-ready data analysis and tips recommendation system built using Python and Jupyter Notebook.
+A data-visualization project with **Matplotlib** and **Seaborn**, using the classic *tips* dataset (244 restaurant
+bills recorded by one waiter: total bill, tip, sex, smoker, day, time and party size). It also includes an interactive
+**Streamlit** dashboard that answers the notebook's questions with statistical tests.
 
-This project transforms raw data into actionable insights and smart recommendations using data-driven logic, with a clear path toward full Machine Learning integration.
+**🔗 Live demo:** https://zvi3tnadcuvppjmdfaebwm.streamlit.app/
 
-It simulates a real-world recommendation engine that can be integrated into modern applications such as mobile apps, SaaS platforms, or analytics dashboards.
+## 🚀 Features
 
-💡 Why This Project?
+- **Notebook (`tips.ipynb`):**
+  - Matplotlib basics on a small sales example: scatter, bar, line, histogram, subplots, boxplot;
+  - Seaborn charts of the tips data: line, bar, scatter, histogram, box, boxen, KDE, count, correlation heatmap;
+  - three questions: Does the tip grow with the bill? Which gender tips more? Does party size matter?
+- **Streamlit dashboard (`app.py`):**
+  - filters by day, time, sex, smoker and party size;
+  - the notebook's three questions answered from the filtered data, with significance tests;
+  - bill-vs-tip scatter with a regression line and correlation;
+  - group comparison of tip, tip % or bill by any category, with 95% confidence intervals and a Welch t-test or ANOVA;
+  - histograms, box plots by day and a correlation heatmap;
+  - data table with CSV download.
 
-Most applications today rely on personalized recommendations.
+## 🔍 Findings (full dataset)
 
-This project demonstrates:
+| Question | Result |
+|---|---|
+| Does the tip grow with the bill? | Yes: r = 0.68 (p < 0.001), about $1.05 more tip per $10 of bill |
+| Which gender tips more? | Men tip more in dollars ($3.09 vs $2.83), but the difference is **not** statistically significant (p = 0.14); as a share of the bill women tip slightly more (16.6% vs 15.8%, p = 0.25) |
+| Does party size affect the tip? | Yes in dollars (ANOVA p < 0.001), mainly because larger parties have larger bills |
 
-How to extract insights from data
-How to convert insights into decisions (tips)
-How to design a scalable recommendation system
-⚙️ Core Features
-📊 Data preprocessing & cleaning
-📈 Exploratory Data Analysis (EDA)
-🧠 Rule-based recommendation engine
-🔌 Ready for AI/ML integration
-🧩 Modular and extensible design
-🛠 Tech Stack
-Python
-Jupyter Notebook
-Pandas / NumPy
-Matplotlib / Seaborn
-📊 Example Insights
+## 🛠️ Tech Stack
 
-The system analyzes patterns such as:
+Python · pandas · NumPy · SciPy · Matplotlib · Seaborn · Altair · Streamlit · Jupyter
 
-Relationship between total bill and tips
-Customer behavior trends
-Impact of group size on spending
+## 📂 Project Structure
 
-👉 Then converts them into actionable recommendations
+```
+tips/
+├── tips.ipynb        # Visualization notebook
+├── tips.csv          # The Seaborn tips dataset (saved from seaborn.load_dataset("tips"))
+├── tips_analysis.py  # Loading, group statistics and tests
+├── app.py            # Streamlit dashboard
+├── requirements.txt
+└── .streamlit/config.toml
+```
 
-🔮 AI Roadmap (Upgrade Path)
+## 📦 Installation
 
-This project is designed to evolve into a full AI system:
-
-🤖 Machine Learning Recommendation Model
-📡 REST API for real-time predictions
-🧠 Personalized user-based suggestions
-📊 Interactive dashboard (Streamlit / Power BI)
-💼 Real-World Use Cases
-Recommendation systems
-Customer analytics platforms
-E-commerce insights
-Mobile app personalization
-SaaS analytics tools
-🚀 Getting Started
+```bash
 git clone https://github.com/amirafarhan/tips.git
 cd tips
-jupyter notebook
+python -m venv venv
+# Windows: venv\Scripts\activate    Linux/Mac: source venv/bin/activate
+pip install -r requirements.txt
+```
 
-Open:
+## ▶️ Run
 
-tips.ipynb
-🧠 System Design Concept
-Raw Data → Data Processing → Pattern Detection → Tips Generation → (Future: ML Model)
-👨‍💻 Author
+Live demo: https://zvi3tnadcuvppjmdfaebwm.streamlit.app/
 
-Amira Mohamed
-Machine Learning Engineer
+Run the Streamlit dashboard locally (opens http://localhost:8501):
 
-⭐ Pro Tip
+```bash
+streamlit run app.py
+```
 
-This project is not just a notebook —
-it represents a scalable AI product idea that can be transformed into:
+Notebook: run `pip install jupyter matplotlib seaborn`, then `jupyter notebook`.
 
-SaaS product 💰
-API service 🌐
-Mobile feature 📱
-📌 Final Note
+## 👩‍💻 Author
 
-Built with a focus on real-world applicability, scalability, and future AI integration.
+Amira Farhan — Machine Learning & Computer Vision Engineer
